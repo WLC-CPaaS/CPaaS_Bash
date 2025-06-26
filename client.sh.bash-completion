@@ -1,0 +1,575 @@
+#  completion                               -*- shell-script -*-
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !
+# ! Note:
+# !
+# ! THIS SCRIPT HAS BEEN AUTOMATICALLY GENERATED USING
+# ! openapi-generator (https://openapi-generator.tech)
+# ! FROM OPENAPI SPECIFICATION IN JSON.
+# !
+# ! Generator version: 7.11.0-SNAPSHOT
+# !
+# !
+# ! System wide installation:
+# !
+# ! $ sudo cp .bash-completion /etc/bash-completion.d/
+# !
+# !
+# ! User home installation (add this line to .bash_profile):
+# !
+# ! [ -r ~/.bash-completion ] && source ~/.bash-completion
+# !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+declare -A mime_type_abbreviations
+# text/*
+mime_type_abbreviations["text"]="text/plain"
+mime_type_abbreviations["html"]="text/html"
+mime_type_abbreviations["md"]="text/x-markdown"
+mime_type_abbreviations["csv"]="text/csv"
+mime_type_abbreviations["css"]="text/css"
+mime_type_abbreviations["rtf"]="text/rtf"
+# application/*
+mime_type_abbreviations["json"]="application/json"
+mime_type_abbreviations["xml"]="application/xml"
+mime_type_abbreviations["yaml"]="application/yaml"
+mime_type_abbreviations["js"]="application/javascript"
+mime_type_abbreviations["bin"]="application/octet-stream"
+mime_type_abbreviations["rdf"]="application/rdf+xml"
+# image/*
+mime_type_abbreviations["jpg"]="image/jpeg"
+mime_type_abbreviations["png"]="image/png"
+mime_type_abbreviations["gif"]="image/gif"
+mime_type_abbreviations["bmp"]="image/bmp"
+mime_type_abbreviations["tiff"]="image/tiff"
+
+
+#
+# Check if this is OSX, if so defined custom init_completion
+#
+if [[ `uname` =~ "Darwin" ]]; then
+    __osx_init_completion()
+    {
+        COMPREPLY=()
+        _get_comp_words_by_ref cur prev words cword
+    }
+fi
+
+_()
+{
+    local cur
+    local prev
+    local words
+    local cword
+
+    # The reference of currently selected REST operation
+    local operation=""
+
+    # The list of available operation in the REST service
+    # It's modelled as an associative array for efficient key lookup
+    declare -A operations
+    operations["v1AccountAccountidChildrenGet"]=1
+    operations["v1AccountAccountidDelete"]=1
+    operations["v1AccountAccountidDnsrecordGet"]=1
+    operations["v1AccountAccountidDnsrecordPost"]=1
+    operations["v1AccountAccountidDnsrecordPut"]=1
+    operations["v1AccountAccountidGet"]=1
+    operations["v1AccountAccountidLimitGet"]=1
+    operations["v1AccountAccountidLimitPut"]=1
+    operations["v1AccountAccountidPost"]=1
+    operations["v1AccountAccountidProvisioningdetailsGet"]=1
+    operations["v1AccountAccountidProvisioningdetailsResetpwPut"]=1
+    operations["v1AccountAccountidPut"]=1
+    operations["v1AccountApikeyGet"]=1
+    operations["v1AccountGet"]=1
+    operations["v1AccountPost"]=1
+    operations["v1MgmtUserGet"]=1
+    operations["v1MgmtUserPost"]=1
+    operations["v1MgmtUserUserIDDelete"]=1
+    operations["v1MgmtUserUserIDGet"]=1
+    operations["v1MgmtUserUserIDPut"]=1
+    operations["v1AccountAccountIDParkedcallGet"]=1
+    operations["v1AccountAccountIDCallqueueGet"]=1
+    operations["v1AccountAccountIDCallqueuePost"]=1
+    operations["v1AccountAccountIDCallqueueQueueIDDelete"]=1
+    operations["v1AccountAccountIDCallqueueQueueIDGet"]=1
+    operations["v1AccountAccountIDCallqueueQueueIDPut"]=1
+    operations["v1AccountAccountIDCallqueueQueueIDStatusGet"]=1
+    operations["v1AccountAccountIDQueuerolesGet"]=1
+    operations["v1AccountAccountIDQueuerolesQueueIDPost"]=1
+    operations["v1AccountAccountIDQueuemembershipPost"]=1
+    operations["v1AccountAccountIDQueuemembershipRecipientIDDisablePost"]=1
+    operations["v1AccountAccountIDQueuemembershipRecipientIDEnablePost"]=1
+    operations["v1AccountAccountIDLoginrecipientRecipientIDPost"]=1
+    operations["v1AccountAccountIDQueuerecipientGet"]=1
+    operations["v1AccountAccountIDRecipientRecipientIDStatusPost"]=1
+    operations["v1AccountAccountIDRecordingGet"]=1
+    operations["v1AccountAccountIDRecordingRecordingIDDelete"]=1
+    operations["v1AccountAccountIDRecordingRecordingIDGet"]=1
+    operations["v1AccountAccountIDUserUserIDRecordingGet"]=1
+    operations["v1AccountAccountIDCallflowCallflowIDDelete"]=1
+    operations["v1AccountAccountIDCallflowCallflowIDGet"]=1
+    operations["v1AccountAccountIDCallflowCallflowIDPut"]=1
+    operations["v1AccountAccountIDCallflowGet"]=1
+    operations["v1AccountAccountIDCallflowPost"]=1
+    operations["v1AccountAccountIDChannelChannelIDGet"]=1
+    operations["v1AccountAccountIDChannelChannelIDPost"]=1
+    operations["v1AccountAccountIDChannelChannelIDPut"]=1
+    operations["v1AccountAccountIDChannelGet"]=1
+    operations["v1AccountAccountIDDeviceDeviceIDChannelGet"]=1
+    operations["v1AccountAccountIDUserUserIDChannelGet"]=1
+    operations["v1AccountAccountIDCdrCdrIDGet"]=1
+    operations["v1AccountAccountIDCdrGet"]=1
+    operations["v1DataCallDailySummaryGet"]=1
+    operations["v1DataCallDetailGet"]=1
+    operations["v1DataCallMonthlySummaryGet"]=1
+    operations["v1DataEndpointListGet"]=1
+    operations["v1DataEventDailySummaryGet"]=1
+    operations["v1DataEventDetailGet"]=1
+    operations["v1DataEventMonthlySummaryGet"]=1
+    operations["v1DataFeatureDailySummaryGet"]=1
+    operations["v1DataFeatureMonthlySummaryGet"]=1
+    operations["v1AccountAccountidDeviceDeviceidDelete"]=1
+    operations["v1AccountAccountidDeviceDeviceidGet"]=1
+    operations["v1AccountAccountidDeviceDeviceidPut"]=1
+    operations["v1AccountAccountidDeviceDeviceidRebootPost"]=1
+    operations["v1AccountAccountidDeviceGet"]=1
+    operations["v1AccountAccountidDevicePost"]=1
+    operations["v1AccountAccountidDeviceStatusGet"]=1
+    operations["v1E911Get"]=1
+    operations["v1E911LocationLocationIDActivatePut"]=1
+    operations["v1E911LocationLocationIDDelete"]=1
+    operations["v1E911LocationValidatePut"]=1
+    operations["v1E911PhoneNumberDelete"]=1
+    operations["v1E911PhoneNumberLocationActiveGet"]=1
+    operations["v1E911PhoneNumberLocationGet"]=1
+    operations["v1E911Post"]=1
+    operations["v1AccountAccountIDGroupGet"]=1
+    operations["v1AccountAccountIDGroupGroupIDDelete"]=1
+    operations["v1AccountAccountIDGroupGroupIDGet"]=1
+    operations["v1AccountAccountIDGroupGroupIDPut"]=1
+    operations["v1AccountAccountIDGroupPost"]=1
+    operations["v1AccountAccountIDMediaMediaIDFileGet"]=1
+    operations["v1AccountAccountIDMediaMediaIDFilePost"]=1
+    operations["v1AccountAccountidMediaGet"]=1
+    operations["v1AccountAccountidMediaMediaidDelete"]=1
+    operations["v1AccountAccountidMediaMediaidGet"]=1
+    operations["v1AccountAccountidMediaPost"]=1
+    operations["v1AccountAccountIDMenuGet"]=1
+    operations["v1AccountAccountIDMenuMenuIDDelete"]=1
+    operations["v1AccountAccountIDMenuMenuIDGet"]=1
+    operations["v1AccountAccountIDMenuMenuIDPut"]=1
+    operations["v1AccountAccountIDMenuPost"]=1
+    operations["v1AccountAccountIDDeviceDeviceIDMetaflowDelete"]=1
+    operations["v1AccountAccountIDDeviceDeviceIDMetaflowGet"]=1
+    operations["v1AccountAccountIDDeviceDeviceIDMetaflowPost"]=1
+    operations["v1AccountAccountIDMetaflowDelete"]=1
+    operations["v1AccountAccountIDMetaflowGet"]=1
+    operations["v1AccountAccountIDMetaflowPost"]=1
+    operations["v1AccountAccountIDUserUserIDMetaflowDelete"]=1
+    operations["v1AccountAccountIDUserUserIDMetaflowGet"]=1
+    operations["v1AccountAccountIDUserUserIDMetaflowPost"]=1
+    operations["v1AccountAccountidPhonenumberGet"]=1
+    operations["v1AccountPhonenumberAssignPost"]=1
+    operations["v1AccountPhonenumberDisconnectPost"]=1
+    operations["v1AccountPhonenumberGet"]=1
+    operations["v1AccountPhonenumberPost"]=1
+    operations["v1AccountPhonenumberUnassignPost"]=1
+    operations["v1PhonenumberSearchGet"]=1
+    operations["v1AccountAccountIDPresenceExtensionPut"]=1
+    operations["v1AccountAccountIDPresenceGet"]=1
+    operations["v1AccountAccountIDUserUserIDPresencePut"]=1
+    operations["v1AccountAccountIDProvisionFilenameGet"]=1
+    operations["v1ApBrandBrandFamilyFamilyGet"]=1
+    operations["v1ApBrandBrandFamilyFamilyModelGet"]=1
+    operations["v1ApBrandBrandFamilyFamilyModelModelGet"]=1
+    operations["v1ApBrandBrandFamilyFamilyModelModelTemplateGet"]=1
+    operations["v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet"]=1
+    operations["v1ApBrandBrandFamilyGet"]=1
+    operations["v1ApBrandBrandGet"]=1
+    operations["v1ApBrandGet"]=1
+    operations["v1ApConfigfileGeneratePost"]=1
+    operations["v1SmsAccountAccountIDCampaignCampaignIDImportGet"]=1
+    operations["v1SmsAccountAccountIDCampaignCampaignIDImportPost"]=1
+    operations["v1SmsAccountAccountIDCampaignCampaignIDPhonenumberGet"]=1
+    operations["v1SmsAccountAccountIDCampaignCampaignIDPhonenumberPut"]=1
+    operations["v1SmsAccountAccountIDCampaignImportGet"]=1
+    operations["v1AccountAccountIDStorageDelete"]=1
+    operations["v1AccountAccountIDStorageGet"]=1
+    operations["v1AccountAccountIDStoragePost"]=1
+    operations["v1AccountAccountIDStoragePut"]=1
+    operations["v1ApPingGet"]=1
+    operations["v1PingGet"]=1
+    operations["v1PingseccognitoGet"]=1
+    operations["v1SystemStatusGet"]=1
+    operations["v1AccountAccountIDTemporalruleGet"]=1
+    operations["v1AccountAccountIDTemporalrulePost"]=1
+    operations["v1AccountAccountIDTemporalruleTemporalRuleIDDelete"]=1
+    operations["v1AccountAccountIDTemporalruleTemporalRuleIDGet"]=1
+    operations["v1AccountAccountIDTemporalruleTemporalRuleIDPut"]=1
+    operations["v1AccountAccountIDTemporalrulesetGet"]=1
+    operations["v1AccountAccountIDTemporalrulesetPost"]=1
+    operations["v1AccountAccountIDTemporalrulesetTemporalRuleSetIDDelete"]=1
+    operations["v1AccountAccountIDTemporalrulesetTemporalRuleSetIDGet"]=1
+    operations["v1AccountAccountIDTemporalrulesetTemporalRuleSetIDPut"]=1
+    operations["v1AccountAccountidUserGet"]=1
+    operations["v1AccountAccountidUserPost"]=1
+    operations["v1AccountAccountidUserUseridDelete"]=1
+    operations["v1AccountAccountidUserUseridGet"]=1
+    operations["v1AccountAccountidUserUseridPut"]=1
+    operations["v1AccountAccountidUserUseridUserauthPost"]=1
+    operations["v1AccountAccountIDVoicemailGet"]=1
+    operations["v1AccountAccountIDVoicemailPost"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDDelete"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDGet"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageGet"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessagePost"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDPut"]=1
+    operations["v1WebhookAccountAccountIDGet"]=1
+    operations["v1WebhookAccountAccountIDPost"]=1
+    operations["v1WebhookAccountAccountIDWebhookIDDelete"]=1
+    operations["v1WebhookAccountAccountIDWebhookIDGet"]=1
+    operations["v1WebhookAccountAccountIDWebhookIDPut"]=1
+
+    # An associative array of operations to their parameters
+    # Only include path, query and header parameters
+    declare -A operation_parameters
+    operation_parameters["v1AccountAccountidChildrenGet"]="accountid= start_key= page_size= "
+    operation_parameters["v1AccountAccountidDelete"]="accountid= "
+    operation_parameters["v1AccountAccountidDnsrecordGet"]="accountid= "
+    operation_parameters["v1AccountAccountidDnsrecordPost"]="accountid= "
+    operation_parameters["v1AccountAccountidDnsrecordPut"]="accountid= "
+    operation_parameters["v1AccountAccountidGet"]="accountid= "
+    operation_parameters["v1AccountAccountidLimitGet"]="accountid= "
+    operation_parameters["v1AccountAccountidLimitPut"]="accountid= "
+    operation_parameters["v1AccountAccountidPost"]="accountid= "
+    operation_parameters["v1AccountAccountidProvisioningdetailsGet"]="accountid= "
+    operation_parameters["v1AccountAccountidProvisioningdetailsResetpwPut"]="accountid= "
+    operation_parameters["v1AccountAccountidPut"]="accountid= "
+    operation_parameters["v1AccountApikeyGet"]=""
+    operation_parameters["v1AccountGet"]="start_key= page_size= "
+    operation_parameters["v1AccountPost"]=""
+    operation_parameters["v1MgmtUserGet"]="page_size= start_key= sort= email= role= first_name= last_name= "
+    operation_parameters["v1MgmtUserPost"]=""
+    operation_parameters["v1MgmtUserUserIDDelete"]="userID= "
+    operation_parameters["v1MgmtUserUserIDGet"]="userID= "
+    operation_parameters["v1MgmtUserUserIDPut"]="userID= "
+    operation_parameters["v1AccountAccountIDParkedcallGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDCallqueueGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDCallqueuePost"]="accountID= "
+    operation_parameters["v1AccountAccountIDCallqueueQueueIDDelete"]="accountID= queueID= "
+    operation_parameters["v1AccountAccountIDCallqueueQueueIDGet"]="accountID= queueID= "
+    operation_parameters["v1AccountAccountIDCallqueueQueueIDPut"]="accountID= queueID= "
+    operation_parameters["v1AccountAccountIDCallqueueQueueIDStatusGet"]="accountID= queueID= "
+    operation_parameters["v1AccountAccountIDQueuerolesGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDQueuerolesQueueIDPost"]="accountID= queueID= "
+    operation_parameters["v1AccountAccountIDQueuemembershipPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDQueuemembershipRecipientIDDisablePost"]="accountID= recipientID= "
+    operation_parameters["v1AccountAccountIDQueuemembershipRecipientIDEnablePost"]="accountID= recipientID= "
+    operation_parameters["v1AccountAccountIDLoginrecipientRecipientIDPost"]="accountID= recipientID= "
+    operation_parameters["v1AccountAccountIDQueuerecipientGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDRecipientRecipientIDStatusPost"]="accountID= recipientID= "
+    operation_parameters["v1AccountAccountIDRecordingGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDRecordingRecordingIDDelete"]="accountID= recordingID= "
+    operation_parameters["v1AccountAccountIDRecordingRecordingIDGet"]="accountID= recordingID= "
+    operation_parameters["v1AccountAccountIDUserUserIDRecordingGet"]="accountID= userID= "
+    operation_parameters["v1AccountAccountIDCallflowCallflowIDDelete"]="accountID= callflowID= "
+    operation_parameters["v1AccountAccountIDCallflowCallflowIDGet"]="accountID= callflowID= "
+    operation_parameters["v1AccountAccountIDCallflowCallflowIDPut"]="accountID= callflowID= "
+    operation_parameters["v1AccountAccountIDCallflowGet"]="accountID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDCallflowPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDChannelChannelIDGet"]="accountID= channelID= "
+    operation_parameters["v1AccountAccountIDChannelChannelIDPost"]="accountID= channelID= "
+    operation_parameters["v1AccountAccountIDChannelChannelIDPut"]="accountID= channelID= "
+    operation_parameters["v1AccountAccountIDChannelGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDDeviceDeviceIDChannelGet"]="accountID= deviceID= "
+    operation_parameters["v1AccountAccountIDUserUserIDChannelGet"]="accountID= userID= "
+    operation_parameters["v1AccountAccountIDCdrCdrIDGet"]="accountID= cdrID= "
+    operation_parameters["v1AccountAccountIDCdrGet"]="accountID= page_size= start_key= created_from= created_to= "
+    operation_parameters["v1DataCallDailySummaryGet"]="account_id= call_type= end_date= page_size= start_date= start_key= "
+    operation_parameters["v1DataCallDetailGet"]="account= call_type= callee_name= callee_number= caller_name= caller_number= end_date= page_size= start_date= start_key= "
+    operation_parameters["v1DataCallMonthlySummaryGet"]="account= call_type= end_month= end_year= page_size= start_key= start_month= start_year= "
+    operation_parameters["v1DataEndpointListGet"]="endpoint_name= feature_name= page_size= start_key= transaction_type= version= "
+    operation_parameters["v1DataEventDailySummaryGet"]="account_id= component= end_date= page_size= start_date= start_key= "
+    operation_parameters["v1DataEventDetailGet"]="account_id= component= end_date_time= event_name= exec_status= page_size= start_date_time= start_key= username= "
+    operation_parameters["v1DataEventMonthlySummaryGet"]="account_id= component= end_month= end_year= page_size= start_key= start_month= start_year= "
+    operation_parameters["v1DataFeatureDailySummaryGet"]="end_date= feature_name= page_size= start_date= start_key= "
+    operation_parameters["v1DataFeatureMonthlySummaryGet"]="end_month= end_year= feature_name= page_size= start_key= start_month= start_year= "
+    operation_parameters["v1AccountAccountidDeviceDeviceidDelete"]="accountid= deviceid= "
+    operation_parameters["v1AccountAccountidDeviceDeviceidGet"]="accountid= deviceid= "
+    operation_parameters["v1AccountAccountidDeviceDeviceidPut"]="accountid= deviceid= "
+    operation_parameters["v1AccountAccountidDeviceDeviceidRebootPost"]="accountid= deviceid= "
+    operation_parameters["v1AccountAccountidDeviceGet"]="accountid= start_key= page_size= "
+    operation_parameters["v1AccountAccountidDevicePost"]="accountid= "
+    operation_parameters["v1AccountAccountidDeviceStatusGet"]="accountid= "
+    operation_parameters["v1E911Get"]=""
+    operation_parameters["v1E911LocationLocationIDActivatePut"]="locationID= "
+    operation_parameters["v1E911LocationLocationIDDelete"]="locationID= "
+    operation_parameters["v1E911LocationValidatePut"]=""
+    operation_parameters["v1E911PhoneNumberDelete"]="phoneNumber= "
+    operation_parameters["v1E911PhoneNumberLocationActiveGet"]="phoneNumber= "
+    operation_parameters["v1E911PhoneNumberLocationGet"]="phoneNumber= "
+    operation_parameters["v1E911Post"]=""
+    operation_parameters["v1AccountAccountIDGroupGet"]="accountID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDGroupGroupIDDelete"]="accountID= groupID= "
+    operation_parameters["v1AccountAccountIDGroupGroupIDGet"]="accountID= groupID= "
+    operation_parameters["v1AccountAccountIDGroupGroupIDPut"]="accountID= groupID= "
+    operation_parameters["v1AccountAccountIDGroupPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDMediaMediaIDFileGet"]="accountID= mediaID= "
+    operation_parameters["v1AccountAccountIDMediaMediaIDFilePost"]="accountID= mediaID= "
+    operation_parameters["v1AccountAccountidMediaGet"]="accountid= start_key= page_size= "
+    operation_parameters["v1AccountAccountidMediaMediaidDelete"]="accountid= mediaid= "
+    operation_parameters["v1AccountAccountidMediaMediaidGet"]="accountid= mediaid= "
+    operation_parameters["v1AccountAccountidMediaPost"]="accountid= "
+    operation_parameters["v1AccountAccountIDMenuGet"]="accountID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDMenuMenuIDDelete"]="accountID= menuID= "
+    operation_parameters["v1AccountAccountIDMenuMenuIDGet"]="accountID= menuID= "
+    operation_parameters["v1AccountAccountIDMenuMenuIDPut"]="accountID= menuID= "
+    operation_parameters["v1AccountAccountIDMenuPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDDeviceDeviceIDMetaflowDelete"]="accountID= deviceID= "
+    operation_parameters["v1AccountAccountIDDeviceDeviceIDMetaflowGet"]="accountID= deviceID= "
+    operation_parameters["v1AccountAccountIDDeviceDeviceIDMetaflowPost"]="accountID= deviceID= "
+    operation_parameters["v1AccountAccountIDMetaflowDelete"]="accountID= "
+    operation_parameters["v1AccountAccountIDMetaflowGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDMetaflowPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDUserUserIDMetaflowDelete"]="accountID= userID= "
+    operation_parameters["v1AccountAccountIDUserUserIDMetaflowGet"]="accountID= userID= "
+    operation_parameters["v1AccountAccountIDUserUserIDMetaflowPost"]="accountID= userID= "
+    operation_parameters["v1AccountAccountidPhonenumberGet"]="accountid= start_key= page_size= "
+    operation_parameters["v1AccountPhonenumberAssignPost"]=""
+    operation_parameters["v1AccountPhonenumberDisconnectPost"]=""
+    operation_parameters["v1AccountPhonenumberGet"]="start_key= page_size= "
+    operation_parameters["v1AccountPhonenumberPost"]=""
+    operation_parameters["v1AccountPhonenumberUnassignPost"]=""
+    operation_parameters["v1PhonenumberSearchGet"]="area_code= quantity= "
+    operation_parameters["v1AccountAccountIDPresenceExtensionPut"]="accountID= extension= "
+    operation_parameters["v1AccountAccountIDPresenceGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDUserUserIDPresencePut"]="accountID= userID= "
+    operation_parameters["v1AccountAccountIDProvisionFilenameGet"]="accountID= filename= "
+    operation_parameters["v1ApBrandBrandFamilyFamilyGet"]="brand= family= "
+    operation_parameters["v1ApBrandBrandFamilyFamilyModelGet"]="brand= family= model_name= page_size= start_key= status= "
+    operation_parameters["v1ApBrandBrandFamilyFamilyModelModelGet"]="brand= family= model= "
+    operation_parameters["v1ApBrandBrandFamilyFamilyModelModelTemplateGet"]="brand= family= model= firmware= page_size= start_key= status= template_name= "
+    operation_parameters["v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet"]="brand= family= model= template= "
+    operation_parameters["v1ApBrandBrandFamilyGet"]="brand= family_name= page_size= start_key= status= "
+    operation_parameters["v1ApBrandBrandGet"]="brand= "
+    operation_parameters["v1ApBrandGet"]="brand_name= page_size= start_key= status= "
+    operation_parameters["v1ApConfigfileGeneratePost"]=""
+    operation_parameters["v1SmsAccountAccountIDCampaignCampaignIDImportGet"]="accountID= campaignID= "
+    operation_parameters["v1SmsAccountAccountIDCampaignCampaignIDImportPost"]="accountID= campaignID= "
+    operation_parameters["v1SmsAccountAccountIDCampaignCampaignIDPhonenumberGet"]="accountID= campaignID= page_num= page_size= "
+    operation_parameters["v1SmsAccountAccountIDCampaignCampaignIDPhonenumberPut"]="accountID= campaignID= "
+    operation_parameters["v1SmsAccountAccountIDCampaignImportGet"]="accountID= page_num= page_size= "
+    operation_parameters["v1AccountAccountIDStorageDelete"]="accountID= "
+    operation_parameters["v1AccountAccountIDStorageGet"]="accountID= "
+    operation_parameters["v1AccountAccountIDStoragePost"]="accountID= "
+    operation_parameters["v1AccountAccountIDStoragePut"]="accountID= "
+    operation_parameters["v1ApPingGet"]=""
+    operation_parameters["v1PingGet"]=""
+    operation_parameters["v1PingseccognitoGet"]=""
+    operation_parameters["v1SystemStatusGet"]=""
+    operation_parameters["v1AccountAccountIDTemporalruleGet"]="accountID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDTemporalrulePost"]="accountID= "
+    operation_parameters["v1AccountAccountIDTemporalruleTemporalRuleIDDelete"]="accountID= temporalRuleID= "
+    operation_parameters["v1AccountAccountIDTemporalruleTemporalRuleIDGet"]="accountID= temporalRuleID= "
+    operation_parameters["v1AccountAccountIDTemporalruleTemporalRuleIDPut"]="accountID= temporalRuleID= "
+    operation_parameters["v1AccountAccountIDTemporalrulesetGet"]="accountID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDTemporalrulesetPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDTemporalrulesetTemporalRuleSetIDDelete"]="accountID= temporalRuleSetID= "
+    operation_parameters["v1AccountAccountIDTemporalrulesetTemporalRuleSetIDGet"]="accountID= temporalRuleSetID= "
+    operation_parameters["v1AccountAccountIDTemporalrulesetTemporalRuleSetIDPut"]="accountID= temporalRuleSetID= "
+    operation_parameters["v1AccountAccountidUserGet"]="accountid= start_key= page_size= "
+    operation_parameters["v1AccountAccountidUserPost"]="accountid= "
+    operation_parameters["v1AccountAccountidUserUseridDelete"]="accountid= userid= "
+    operation_parameters["v1AccountAccountidUserUseridGet"]="accountid= userid= "
+    operation_parameters["v1AccountAccountidUserUseridPut"]="accountid= userid= "
+    operation_parameters["v1AccountAccountidUserUseridUserauthPost"]="accountid= userid= "
+    operation_parameters["v1AccountAccountIDVoicemailGet"]="accountID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDVoicemailPost"]="accountID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDDelete"]="accountID= voicemailID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDGet"]="accountID= voicemailID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageGet"]="accountID= voicemailID= start_key= page_size= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessagePost"]="accountID= voicemailID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDPut"]="accountID= voicemailID= "
+    operation_parameters["v1WebhookAccountAccountIDGet"]="accountID= page_size= current_page= "
+    operation_parameters["v1WebhookAccountAccountIDPost"]="accountID= "
+    operation_parameters["v1WebhookAccountAccountIDWebhookIDDelete"]="accountID= webhookID= "
+    operation_parameters["v1WebhookAccountAccountIDWebhookIDGet"]="accountID= webhookID= "
+    operation_parameters["v1WebhookAccountAccountIDWebhookIDPut"]="accountID= webhookID= "
+
+    # An associative array of possible values for enum parameters
+    declare -A operation_parameters_enum_values
+
+    #
+    # Check if this is OSX and use special __osx_init_completion function
+    #
+    if [[ `uname` =~ "Darwin" ]]; then
+        __osx_init_completion || return
+    else
+        _init_completion -s || return
+    fi
+
+
+    # Check if operation is already in the command line provided
+    for word in "${words[@]}"; do
+        if [[ -n $word && ${operations[$word]} ]]; then
+            operation="${word}"
+        fi
+    done
+
+    if [[ -z $operation ]]; then
+        case $prev in
+            --ciphers|--connect-timeout|-C|--continue-at|-F|--form|--form-string|\
+            --ftp-account|--ftp-alternative-to-user|-P|--ftp-port|-H|--header|-h|\
+            --help|--hostpubmd5|--keepalive-time|--krb|--limit-rate|--local-port|\
+            --mail-from|--mail-rcpt|--max-filesize|--max-redirs|-m|--max-time|\
+            --pass|--proto|--proto-redir|--proxy-user|--proxy1.0|-Q|--quote|-r|\
+            --range|-X|--request|--retry|--retry-delay|--retry-max-time|\
+            --socks5-gssapi-service|-t|--telnet-option|--tftp-blksize|-z|\
+            --time-cond|--url|-u|--user|-A|--user-agent|-V|--version|-w|\
+            --write-out|--resolve|--tlsuser|--tlspassword|--about)
+                return
+                ;;
+            -K|--config|-b|--cookie|-c|--cookie-jar|-D|--dump-header|--egd-file|\
+            --key|--libcurl|-o|--output|--random-file|-T|--upload-file|--trace|\
+            --trace-ascii|--netrc-file)
+                _filedir
+                return
+                ;;
+            --cacert|-E|--cert)
+                _filedir '@(c?(e)rt|cer|pem|der)'
+                return
+                ;;
+            --capath)
+                _filedir -d
+                return
+                ;;
+            --cert-type|--key-type)
+                COMPREPLY=( $( compgen -W 'DER PEM ENG' -- "$cur" ) )
+                return
+                ;;
+            --crlfile)
+                _filedir crl
+                return
+                ;;
+            -d|--data|--data-ascii|--data-binary|--data-urlencode)
+                if [[ $cur == \@* ]]; then
+                    cur=${cur:1}
+                    _filedir
+                    COMPREPLY=( "${COMPREPLY[@]/#/@}" )
+                fi
+                return
+                ;;
+            --delegation)
+                COMPREPLY=( $( compgen -W 'none policy always' -- "$cur" ) )
+                return
+                ;;
+            --engine)
+                COMPREPLY=( $( compgen -W 'list' -- "$cur" ) )
+                return
+                ;;
+            --ftp-method)
+                COMPREPLY=( $( compgen -W 'multicwd nocwd singlecwd' -- "$cur" ) )
+                return
+                ;;
+            --ftp-ssl-ccc-mode)
+                COMPREPLY=( $( compgen -W 'active passive' -- "$cur" ) )
+                return
+                ;;
+            --interface)
+                _available_interfaces -a
+                return
+                ;;
+            -x|--proxy|--socks4|--socks4a|--socks5|--socks5-hostname)
+                _known_hosts_real
+                return
+                ;;
+            --pubkey)
+                _filedir pub
+                return
+                ;;
+            --stderr)
+                COMPREPLY=( $( compgen -W '-' -- "$cur" ) )
+                _filedir
+                return
+                ;;
+            --tlsauthtype)
+                COMPREPLY=( $( compgen -W 'SRP' -- "$cur" ) )
+                return
+                ;;
+            --host)
+                COMPREPLY=( $( compgen -W 'http:// https://' -- "$cur" ) )
+                return
+                ;;
+            -ct|--content-type|-ac|--accept)
+                COMPREPLY=( $( compgen -W '${!mime_type_abbreviations[*]}' -- "$cur" ) )
+                return
+                ;;
+        esac
+    fi
+
+    #
+    # Complete the server address based on ~/.ssh/known_hosts
+    # and ~/.ssh/config
+    #
+    local prefix=${COMP_WORDS[COMP_CWORD-2]}
+    local colon=${COMP_WORDS[COMP_CWORD-1]}
+    if [[ "$colon" == ":" && ( $prefix == "https" || $prefix == "http" ) ]]; then
+        COMPREPLY=()
+        local comp_ssh_hosts=`[[ -f ~/.ssh/known_hosts ]] && \
+                              ( cat ~/.ssh/known_hosts | \
+                              grep '^[a-zA-Z0-9]' | \
+                              cut -f 1 -d ' ' | \
+                              sed -e s/,.*//g | \
+                              grep -v ^# | \
+                              uniq | \
+                              grep -v "\[" ) ;
+                              [[ -f ~/.ssh/config ]] && \
+                              ( cat ~/.ssh/config | \
+                              grep "^Host " | \
+                              awk '{print $2}' )`
+        COMPREPLY=( $( compgen -P '//' -W '${comp_ssh_hosts}' -- "${cur:2}") )
+        return
+    fi
+
+    #
+    # Complete the  and cURL's arguments
+    #
+    if [[ $cur == -* ]]; then
+        COMPREPLY=( $( compgen -W '$(_parse_help curl) $(_parse_help $1)' -- "$cur" ) )
+        return
+    fi
+
+    #
+    # If the argument starts with a letter this could be either an operation
+    # or an operation parameter
+    # When $cur is empty, suggest the list of operations by default
+    #
+    if [[ $cur =~ ^[A-Za-z_0-9]* ]]; then
+        # If operation has not been yet selected, suggest the list of operations
+        # otherwise suggest arguments of this operation as declared in the
+        # OpenAPI specification
+        if [[ -z $operation ]]; then
+            COMPREPLY=( $(compgen -W '${!operations[*]}' -- ${cur}) )
+        else
+            COMPREPLY=( $(compgen -W '${operation_parameters[$operation]}' -- ${cur}) )
+            compopt -o nospace
+        fi
+        return
+    fi
+
+} &&
+complete -F _ 
+
+# ex: ts=4 sw=4 et filetype=sh
