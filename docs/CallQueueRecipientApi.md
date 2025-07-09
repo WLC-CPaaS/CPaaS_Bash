@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsCallQueueResponseShort**](ServiceDocsCallQueueResponseShort.md)
+[**ServiceDocsCallQueueRecipientLoginLogoutOutput**](ServiceDocsCallQueueRecipientLoginLogoutOutput.md)
 
 ### Authorization
 

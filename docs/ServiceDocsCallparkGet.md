@@ -1,9 +1,9 @@
-# service.DocsGetQueueRecipients
+# service.DocsCallparkGet
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ServiceQueueRecipientOutput**](ServiceQueueRecipientOutput.md) |  | [optional] [default to null]
+**data** | **array[map]** |  | [optional] [default to null]
 **nextUnderscorestartUnderscorekey** | **string** |  | [optional] [default to null]
 **pageUnderscoresize** | **integer** |  | [optional] [default to null]
 **requestUnderscoreid** | **string** |  | [optional] [default to null]

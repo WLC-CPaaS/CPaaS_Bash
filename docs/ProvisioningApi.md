@@ -4,21 +4,58 @@ All URIs are relative to **
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1ApBrandBrandFamilyFamilyGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyGet) | **GET** /v1/ap/brand/{brand}/family/{family} | Get Family
+[**v1AccountAccountIDProvisionFilenameGet**](ProvisioningApi.md#v1AccountAccountIDProvisionFilenameGet) | **GET** /v1/account/{accountID}/provision/{filename} | Get Config File Details
+[**v1ApBrandBrandFamilyFamilyGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyGet) | **GET** /v1/ap/brand/{brand}/family/{family} | Get Family Details
 [**v1ApBrandBrandFamilyFamilyModelGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyModelGet) | **GET** /v1/ap/brand/{brand}/family/{family}/model | Get Model List
-[**v1ApBrandBrandFamilyFamilyModelModelGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyModelModelGet) | **GET** /v1/ap/brand/{brand}/family/{family}/model/{model} | Get Model
+[**v1ApBrandBrandFamilyFamilyModelModelGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyModelModelGet) | **GET** /v1/ap/brand/{brand}/family/{family}/model/{model} | Get Model Details
 [**v1ApBrandBrandFamilyFamilyModelModelTemplateGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyModelModelTemplateGet) | **GET** /v1/ap/brand/{brand}/family/{family}/model/{model}/template | Get Template List
-[**v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet) | **GET** /v1/ap/brand/{brand}/family/{family}/model/{model}/template/{template} | Get Template
+[**v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet**](ProvisioningApi.md#v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet) | **GET** /v1/ap/brand/{brand}/family/{family}/model/{model}/template/{template} | Get Template Details
 [**v1ApBrandBrandFamilyGet**](ProvisioningApi.md#v1ApBrandBrandFamilyGet) | **GET** /v1/ap/brand/{brand}/family | Get Family List
-[**v1ApBrandBrandGet**](ProvisioningApi.md#v1ApBrandBrandGet) | **GET** /v1/ap/brand/{brand} | Get Brand
-[**v1ApBrandGet**](ProvisioningApi.md#v1ApBrandGet) | **GET** /v1/ap/brand | Get Brand
-[**v1ApConfigfileGeneratePost**](ProvisioningApi.md#v1ApConfigfileGeneratePost) | **POST** /v1/ap/configfile/generate | Generate config file
+[**v1ApBrandBrandGet**](ProvisioningApi.md#v1ApBrandBrandGet) | **GET** /v1/ap/brand/{brand} | Get Brand Details
+[**v1ApBrandGet**](ProvisioningApi.md#v1ApBrandGet) | **GET** /v1/ap/brand | Get Brand List
+[**v1ApConfigfileGeneratePost**](ProvisioningApi.md#v1ApConfigfileGeneratePost) | **POST** /v1/ap/configfile/generate | Generate Config File
 
+
+
+## v1AccountAccountIDProvisionFilenameGet
+
+Get Config File Details
+
+Retrieve the configuration details (e.g., settings and parameters) for a device.
+
+### Example
+
+```bash
+ v1AccountAccountIDProvisionFilenameGet accountID=value filename=value
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountID** | **string** | Account ID, 32 alpha numeric | [default to null]
+ **filename** | **string** | Name of config file | [default to null]
+
+### Return type
+
+**binary**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not Applicable
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## v1ApBrandBrandFamilyFamilyGet
 
-Get Family
+Get Family Details
 
 Retrieve a family's details by the randomly generated ID.
 
@@ -94,7 +131,7 @@ Name | Type | Description  | Notes
 
 ## v1ApBrandBrandFamilyFamilyModelModelGet
 
-Get Model
+Get Model Details
 
 Retrieve a model's details by the randomly generated ID.
 
@@ -173,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet
 
-Get Template
+Get Template Details
 
 Retrieve details about a template for a model by the randomly generated ID.
 
@@ -250,7 +287,7 @@ Name | Type | Description  | Notes
 
 ## v1ApBrandBrandGet
 
-Get Brand
+Get Brand Details
 
 Retrieve a brand's details by the randomly generated ID.
 
@@ -285,7 +322,7 @@ Name | Type | Description  | Notes
 
 ## v1ApBrandGet
 
-Get Brand
+Get Brand List
 
 Retrieve a list of all brands (e.g., Yealink and Polycom) by client.
 
@@ -323,7 +360,7 @@ Name | Type | Description  | Notes
 
 ## v1ApConfigfileGeneratePost
 
-Generate config file
+Generate Config File
 
 Generate a configuration file that includes a list of parameters passed to the specified template_id in the request payload, with populated values returned in the response.
 

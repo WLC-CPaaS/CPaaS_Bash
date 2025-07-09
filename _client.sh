@@ -390,15 +390,16 @@ case $state in
             "v1AccountPhonenumberUnassignPost[Unassign Number]" \
             "v1PhonenumberSearchGet[Search New Numbers]"             "v1AccountAccountIDPresenceExtensionPut[Set/Reset Presence for Extension]" \
             "v1AccountAccountIDPresenceGet[Get Presence Details]" \
-            "v1AccountAccountIDUserUserIDPresencePut[Set/Reset Presence for User]"             "v1AccountAccountIDProvisionFilenameGet[]"             "v1ApBrandBrandFamilyFamilyGet[Get Family]" \
+            "v1AccountAccountIDUserUserIDPresencePut[Set/Reset Presence for User]"             "v1AccountAccountIDProvisionFilenameGet[Get Config File Details]" \
+            "v1ApBrandBrandFamilyFamilyGet[Get Family Details]" \
             "v1ApBrandBrandFamilyFamilyModelGet[Get Model List]" \
-            "v1ApBrandBrandFamilyFamilyModelModelGet[Get Model]" \
+            "v1ApBrandBrandFamilyFamilyModelModelGet[Get Model Details]" \
             "v1ApBrandBrandFamilyFamilyModelModelTemplateGet[Get Template List]" \
-            "v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet[Get Template]" \
+            "v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet[Get Template Details]" \
             "v1ApBrandBrandFamilyGet[Get Family List]" \
-            "v1ApBrandBrandGet[Get Brand]" \
-            "v1ApBrandGet[Get Brand]" \
-            "v1ApConfigfileGeneratePost[Generate config file]"             "v1SmsAccountAccountIDCampaignCampaignIDImportGet[]" \
+            "v1ApBrandBrandGet[Get Brand Details]" \
+            "v1ApBrandGet[Get Brand List]" \
+            "v1ApConfigfileGeneratePost[Generate Config File]"             "v1SmsAccountAccountIDCampaignCampaignIDImportGet[]" \
             "v1SmsAccountAccountIDCampaignCampaignIDImportPost[]" \
             "v1SmsAccountAccountIDCampaignCampaignIDPhonenumberGet[]" \
             "v1SmsAccountAccountIDCampaignCampaignIDPhonenumberPut[]" \

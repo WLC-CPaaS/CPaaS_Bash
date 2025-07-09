@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 Impersonate a User
 
-Impersonate as another user if you have access to admin.
+Retrieve a token for making presence calls.
 
 ### Example
 

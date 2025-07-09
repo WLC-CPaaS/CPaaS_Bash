@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsCallQueueMemberGetSingle**](ServiceDocsCallQueueMemberGetSingle.md)
+[**ServiceDocsQueueMembershipOutput**](ServiceDocsQueueMembershipOutput.md)
 
 ### Authorization
 

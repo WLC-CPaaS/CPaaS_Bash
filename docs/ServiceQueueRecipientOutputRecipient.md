@@ -1,10 +1,9 @@
-# service.E911URIInput
+# service.QueueRecipientOutputRecipient
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**callerName** | **string** |  | [optional] [default to null]
-**uri** | **string** |  | [default to null]
+**features** | [**ServiceQueueRecipientOutputRecipientFeatures**](ServiceQueueRecipientOutputRecipientFeatures.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

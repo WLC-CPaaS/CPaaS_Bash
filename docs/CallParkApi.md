@@ -29,7 +29,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceDocsParkedcallGet**](ServiceDocsParkedcallGet.md)
+[**ServiceDocsCallparkGet**](ServiceDocsCallparkGet.md)
 
 ### Authorization
 

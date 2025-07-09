@@ -1938,23 +1938,18 @@ read -r -d '' ops <<EOF
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
-    echo -e "${BOLD}${WHITE}[provision]${OFF}"
-read -r -d '' ops <<EOF
-  ${CYAN}v1AccountAccountIDProvisionFilenameGet${OFF};
-EOF
-echo "  $ops" | column -t -s ';'
-    echo ""
     echo -e "${BOLD}${WHITE}[provisioning]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}v1ApBrandBrandFamilyFamilyGet${OFF};Get Family (AUTH)
+  ${CYAN}v1AccountAccountIDProvisionFilenameGet${OFF};Get Config File Details
+  ${CYAN}v1ApBrandBrandFamilyFamilyGet${OFF};Get Family Details (AUTH)
   ${CYAN}v1ApBrandBrandFamilyFamilyModelGet${OFF};Get Model List (AUTH)
-  ${CYAN}v1ApBrandBrandFamilyFamilyModelModelGet${OFF};Get Model (AUTH)
+  ${CYAN}v1ApBrandBrandFamilyFamilyModelModelGet${OFF};Get Model Details (AUTH)
   ${CYAN}v1ApBrandBrandFamilyFamilyModelModelTemplateGet${OFF};Get Template List (AUTH)
-  ${CYAN}v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet${OFF};Get Template (AUTH)
+  ${CYAN}v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet${OFF};Get Template Details (AUTH)
   ${CYAN}v1ApBrandBrandFamilyGet${OFF};Get Family List (AUTH)
-  ${CYAN}v1ApBrandBrandGet${OFF};Get Brand (AUTH)
-  ${CYAN}v1ApBrandGet${OFF};Get Brand (AUTH)
-  ${CYAN}v1ApConfigfileGeneratePost${OFF};Generate config file (AUTH)
+  ${CYAN}v1ApBrandBrandGet${OFF};Get Brand Details (AUTH)
+  ${CYAN}v1ApBrandGet${OFF};Get Brand List (AUTH)
+  ${CYAN}v1ApConfigfileGeneratePost${OFF};Generate Config File (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
@@ -2049,7 +2044,7 @@ echo "  $ops" | column -t -s ';'
     echo -e "  -V,--version\\t\\t\\t\\tPrint API version"
     echo -e "  --about\\t\\t\\t\\tPrint the information about service"
     echo -e "  --host ${CYAN}<url>${OFF}\\t\\t\\t\\tSpecify the host URL "
-echo -e "              \\t\\t\\t\\t(e.g. 'https://API_HOSTNAME')"
+echo -e "              \\t\\t\\t\\t(e.g. 'https://api.beta.cpaaslabs.net')"
 
     echo -e "  --force\\t\\t\\t\\tForce command invocation in spite of missing"
     echo -e "         \\t\\t\\t\\trequired parameters or wrong content type"
@@ -4675,7 +4670,7 @@ print_v1AccountAccountIDUserUserIDPresencePut_help() {
 ##############################################################################
 print_v1AccountAccountIDProvisionFilenameGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1AccountAccountIDProvisionFilenameGet - ${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1AccountAccountIDProvisionFilenameGet - Get Config File Details${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve the configuration details (e.g., settings and parameters) for a device." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -4696,7 +4691,7 @@ print_v1AccountAccountIDProvisionFilenameGet_help() {
 ##############################################################################
 print_v1ApBrandBrandFamilyFamilyGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ApBrandBrandFamilyFamilyGet - Get Family${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ApBrandBrandFamilyFamilyGet - Get Family Details${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve a family's details by the randomly generated ID." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -4750,7 +4745,7 @@ print_v1ApBrandBrandFamilyFamilyModelGet_help() {
 ##############################################################################
 print_v1ApBrandBrandFamilyFamilyModelModelGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ApBrandBrandFamilyFamilyModelModelGet - Get Model${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ApBrandBrandFamilyFamilyModelModelGet - Get Model Details${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve a model's details by the randomly generated ID." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -4808,7 +4803,7 @@ print_v1ApBrandBrandFamilyFamilyModelModelTemplateGet_help() {
 ##############################################################################
 print_v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet - Get Template${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ApBrandBrandFamilyFamilyModelModelTemplateTemplateGet - Get Template Details${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve details about a template for a model by the randomly generated ID." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -4863,7 +4858,7 @@ print_v1ApBrandBrandFamilyGet_help() {
 ##############################################################################
 print_v1ApBrandBrandGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ApBrandBrandGet - Get Brand${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ApBrandBrandGet - Get Brand Details${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve a brand's details by the randomly generated ID." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -4885,7 +4880,7 @@ print_v1ApBrandBrandGet_help() {
 ##############################################################################
 print_v1ApBrandGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ApBrandGet - Get Brand${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ApBrandGet - Get Brand List${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieve a list of all brands (e.g., Yealink and Polycom) by client." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -4914,7 +4909,7 @@ print_v1ApBrandGet_help() {
 ##############################################################################
 print_v1ApConfigfileGeneratePost_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ApConfigfileGeneratePost - Generate config file${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ApConfigfileGeneratePost - Generate Config File${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Generate a configuration file that includes a list of parameters passed to the specified template_id in the request payload, with populated values returned in the response." | paste -sd' ' | fold -sw 80
     echo -e ""
@@ -5544,7 +5539,7 @@ print_v1AccountAccountidUserUseridUserauthPost_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1AccountAccountidUserUseridUserauthPost - Impersonate a User${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Impersonate as another user if you have access to admin." | paste -sd' ' | fold -sw 80
+    echo -e "Retrieve a token for making presence calls." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}accountid${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Account ID, 32 alpha numeric ${YELLOW}Specify as: accountid=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
