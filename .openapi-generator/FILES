@@ -58,6 +58,7 @@ docs/ModelsDeviceOutputFullProvision.md
 docs/ModelsDeviceOutputFullSIP.md
 docs/ModelsFamily.md
 docs/ModelsGenerateConfigFileRequest.md
+docs/ModelsLineKeyProcessedTempData.md
 docs/ModelsModel.md
 docs/ModelsMusicOnHold.md
 docs/ModelsTemplate.md

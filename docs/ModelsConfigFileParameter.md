@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **httpsUnderscorehost** | **string** |  | [optional] [default to null]
 **httpsUnderscorepassword** | **string** |  | [optional] [default to null]
 **httpsUnderscoreusername** | **string** |  | [optional] [default to null]
+**lineUnderscorekeys** | [**array[ModelsLineKeyProcessedTempData]**](ModelsLineKeyProcessedTempData.md) |  | [optional] [default to null]
 **macUnderscoreaddress** | **string** |  | [optional] [default to null]
 **realm** | **string** |  | [optional] [default to null]
 **sipUnderscorepassword** | **string** |  | [optional] [default to null]
