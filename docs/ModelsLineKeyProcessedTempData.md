@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **string** |  | [optional] [default to null]
-**line** | **integer** |  | [optional] [default to null]
 **type** | **string** |  | [optional] [default to null]
 **value** | **string** |  | [optional] [default to null]
 

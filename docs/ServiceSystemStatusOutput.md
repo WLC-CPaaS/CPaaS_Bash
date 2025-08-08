@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **cpaasUnderscoreservices** | [**ServiceSystemStatusCPAASService**](ServiceSystemStatusCPAASService.md) |  | [optional] [default to null]
 **messagingUnderscoreservices** | [**ServiceSystemStatusMessagingService**](ServiceSystemStatusMessagingService.md) |  | [optional] [default to null]
 **supportUnderscoreservices** | [**ServiceSystemStatusSupportService**](ServiceSystemStatusSupportService.md) |  | [optional] [default to null]
-**voipUnderscoreservices** | [**ServiceSystemStatusVOIPService**](ServiceSystemStatusVOIPService.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -214,7 +214,6 @@ docs/ServiceFeatureCode.md
 docs/ServiceGroupOutputFull.md
 docs/ServiceGroupOutputShort.md
 docs/ServiceImpersonateUserOutputFull.md
-docs/ServiceImpersonatedUserInfo.md
 docs/ServiceMediaOutputFull.md
 docs/ServiceMediaOutputShort.md
 docs/ServiceMetaflowOutput.md
@@ -239,7 +238,6 @@ docs/ServiceSystemStatusCPAASService.md
 docs/ServiceSystemStatusMessagingService.md
 docs/ServiceSystemStatusOutput.md
 docs/ServiceSystemStatusSupportService.md
-docs/ServiceSystemStatusVOIPService.md
 docs/ServiceTTS.md
 docs/ServiceTemporalRuleOutputFull.md
 docs/ServiceTemporalRuleOutputShort.md
