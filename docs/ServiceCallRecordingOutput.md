@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **callerUnderscoreidUnderscorenumber** | **string** |  | [optional] [default to null]
 **cdrUnderscoreid** | **string** |  | [optional] [default to null]
 **contentUnderscoretype** | **string** |  | [optional] [default to null]
-**customUnderscorechannelUnderscorevars** | [**map[String, AnyType]**](AnyType.md) |  | [optional] [default to null]
+**customUnderscorechannelUnderscorevars** | **map[String, map]** |  | [optional] [default to null]
 **description** | **string** |  | [optional] [default to null]
 **direction** | **string** |  | [optional] [default to null]
 **duration** | **integer** |  | [optional] [default to null]

@@ -1,4 +1,4 @@
-# service.ParkingSlotData
+# models.ParkingSlotData
 
 ## Properties
 Name | Type | Description | Notes

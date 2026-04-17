@@ -10,7 +10,7 @@
 # !
 # ! Based on: https://github.com/Valodim/zsh-curl-completion/blob/master/_curl
 # !
-# ! Generator version: 7.11.0-SNAPSHOT
+# ! Generator version: 7.21.0
 # !
 # !
 # ! Installation:
@@ -428,10 +428,12 @@ case $state in
             "v1AccountAccountIDVoicemailVoicemailIDGet[Get Voicemail Box Details]" \
             "v1AccountAccountIDVoicemailVoicemailIDMessageGet[Get Voicemail Message List]" \
             "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete[Delete Voicemail Message]" \
+            "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFileGet[Get Voicemail Message File]" \
+            "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFilePost[Add Voicemail Message File]" \
             "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet[Get Voicemail Message Details]" \
             "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut[Update Voicemail Message]" \
-            "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet[Get Voicemail Message File]" \
-            "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost[Add Voicemail Message File]" \
+            "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet[Get Voicemail Message File (Deprecated)]" \
+            "v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost[Add Voicemail Message File (Deprecated)]" \
             "v1AccountAccountIDVoicemailVoicemailIDMessagePost[Create Voicemail Message]" \
             "v1AccountAccountIDVoicemailVoicemailIDPut[Update Voicemail Box]"             "v1WebhookAccountAccountIDGet[Get Webhook List]" \
             "v1WebhookAccountAccountIDPost[Create Webhook]" \
@@ -1704,6 +1706,24 @@ case $state in
           "accountID=:[PATH] Account ID, 32 alpha numeric"
 "voicemailID=:[PATH] Voicemail ID, 32 alpha numeric"
 "messageID=:[PATH] message ID, 32 alpha numeric"
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFileGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "accountID=:[PATH] Account ID, unique 32-character alphanumeric identifier"
+"voicemailID=:[PATH] Voicemail Box ID, unique 32-character alphanumeric identifier"
+"messageID=:[PATH] Message ID, unique 32-character alphanumeric identifier"
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFilePost)
+        local -a _op_arguments
+        _op_arguments=(
+          "accountID=:[PATH] Account ID, 32 alphanumeric characters"
+"voicemailID=:[PATH] Voicemail ID, 32 alphanumeric characters"
+"messageID=:[PATH] Message ID, 32 alphanumeric characters"
                     )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

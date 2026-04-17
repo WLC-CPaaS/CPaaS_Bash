@@ -1,9 +1,9 @@
-# service.DocE911AddLocationOutput
+# _v1_account__accountid__dnsrecord_get_200_response
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ServiceE911AddLocationOutput**](ServiceE911AddLocationOutput.md) |  | [optional] [default to null]
+**data** | [**TypesResourceRecordSet**](TypesResourceRecordSet.md) |  | [optional] [default to null]
 **requestUnderscoreid** | **string** |  | [optional] [default to null]
 **statusUnderscorecode** | **integer** |  | [optional] [default to null]
 

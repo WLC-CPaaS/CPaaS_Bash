@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.11.0-SNAPSHOT
+# ! Generator version: 7.21.0
 # !
 # !
 # ! System wide installation:
@@ -225,6 +225,8 @@ _()
     operations["v1AccountAccountIDVoicemailVoicemailIDGet"]=1
     operations["v1AccountAccountIDVoicemailVoicemailIDMessageGet"]=1
     operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFileGet"]=1
+    operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFilePost"]=1
     operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet"]=1
     operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut"]=1
     operations["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet"]=1
@@ -396,6 +398,8 @@ _()
     operation_parameters["v1AccountAccountIDVoicemailVoicemailIDGet"]="accountID= voicemailID= "
     operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageGet"]="accountID= voicemailID= start_key= page_size= "
     operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFileGet"]="accountID= voicemailID= messageID= "
+    operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFilePost"]="accountID= voicemailID= messageID= "
     operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet"]="accountID= voicemailID= messageID= "
     operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut"]="accountID= voicemailID= messageID= "
     operation_parameters["v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet"]="accountID= voicemailID= messageID= "

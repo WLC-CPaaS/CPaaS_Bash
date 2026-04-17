@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **callUnderscoreforward** | [**ModelsCallForward**](ModelsCallForward.md) |  | [optional] [default to null]
 **callerUnderscoreid** | [**ServiceVOIPDeviceAddEdit3c**](ServiceVOIPDeviceAddEdit3c.md) |  | [optional] [default to null]
-**deviceUnderscoretype** | **string** |  | [optional] [default to null]
+**deviceUnderscoretype** | **string** |  | [default to null]
 **doUnderscorenotUnderscoredisturb** | [**ModelsVOIPSharedDoNotDisturb**](ModelsVOIPSharedDoNotDisturb.md) |  | [optional] [default to null]
 **enabled** | **boolean** |  | [optional] [default to null]
 **macUnderscoreaddress** | **string** |  | [optional] [default to null]

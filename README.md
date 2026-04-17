@@ -259,10 +259,12 @@ Class | Method | HTTP request | Description
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDGet**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidget) | **GET** /v1/account/{accountID}/voicemail/{voicemailID} | Get Voicemail Box Details
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageGet**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessageget) | **GET** /v1/account/{accountID}/voicemail/{voicemailID}/message | Get Voicemail Message List
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDDelete**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageiddelete) | **DELETE** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID} | Delete Voicemail Message
+*VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFileGet**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidfileget) | **GET** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID}/file | Get Voicemail Message File
+*VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDFilePost**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidfilepost) | **POST** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID}/file | Add Voicemail Message File
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDGet**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidget) | **GET** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID} | Get Voicemail Message Details
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDPut**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidput) | **PUT** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID} | Update Voicemail Message
-*VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidrawget) | **GET** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID}/raw | Get Voicemail Message File
-*VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidrawpost) | **POST** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID}/raw | Add Voicemail Message File
+*VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawGet**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidrawget) | **GET** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID}/raw | Get Voicemail Message File (Deprecated)
+*VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessageMessageIDRawPost**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagemessageidrawpost) | **POST** /v1/account/{accountID}/voicemail/{voicemailID}/message/{messageID}/raw | Add Voicemail Message File (Deprecated)
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDMessagePost**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidmessagepost) | **POST** /v1/account/{accountID}/voicemail/{voicemailID}/message | Create Voicemail Message
 *VoicemailApi* | [**v1AccountAccountIDVoicemailVoicemailIDPut**](docs/VoicemailApi.md#v1accountaccountidvoicemailvoicemailidput) | **PUT** /v1/account/{accountID}/voicemail/{voicemailID} | Update Voicemail Box
 *WebhookApi* | [**v1WebhookAccountAccountIDGet**](docs/WebhookApi.md#v1webhookaccountaccountidget) | **GET** /v1/webhook/account/{accountID} | Get Webhook List
@@ -316,6 +318,7 @@ Class | Method | HTTP request | Description
  - [ModelsLineKeyProcessedTempData](docs/ModelsLineKeyProcessedTempData.md)
  - [ModelsModel](docs/ModelsModel.md)
  - [ModelsMusicOnHold](docs/ModelsMusicOnHold.md)
+ - [ModelsParkingSlotData](docs/ModelsParkingSlotData.md)
  - [ModelsTemplate](docs/ModelsTemplate.md)
  - [ModelsUserOutputFull](docs/ModelsUserOutputFull.md)
  - [ModelsUserOutputFullCallerid](docs/ModelsUserOutputFullCallerid.md)
@@ -469,7 +472,6 @@ Class | Method | HTTP request | Description
  - [ServiceMediaOutputShort](docs/ServiceMediaOutputShort.md)
  - [ServiceMetaflowOutput](docs/ServiceMetaflowOutput.md)
  - [ServiceMetaflowPattern](docs/ServiceMetaflowPattern.md)
- - [ServiceParkingSlotData](docs/ServiceParkingSlotData.md)
  - [ServicePhoneNumberResult](docs/ServicePhoneNumberResult.md)
  - [ServicePhoneNumberSearchOutput](docs/ServicePhoneNumberSearchOutput.md)
  - [ServicePhonenumberOutput](docs/ServicePhonenumberOutput.md)
@@ -534,12 +536,23 @@ Class | Method | HTTP request | Description
  - [ServiceWebhookAdd](docs/ServiceWebhookAdd.md)
  - [ServiceWebhookDeleteOutput](docs/ServiceWebhookDeleteOutput.md)
  - [ServiceWebhookEdit](docs/ServiceWebhookEdit.md)
+ - [TypesAliasTarget](docs/TypesAliasTarget.md)
+ - [TypesCidrRoutingConfig](docs/TypesCidrRoutingConfig.md)
+ - [TypesCoordinates](docs/TypesCoordinates.md)
+ - [TypesGeoLocation](docs/TypesGeoLocation.md)
+ - [TypesGeoProximityLocation](docs/TypesGeoProximityLocation.md)
+ - [TypesRRType](docs/TypesRRType.md)
+ - [TypesResourceRecord](docs/TypesResourceRecord.md)
+ - [TypesResourceRecordSet](docs/TypesResourceRecordSet.md)
+ - [TypesResourceRecordSetFailover](docs/TypesResourceRecordSetFailover.md)
+ - [TypesResourceRecordSetRegion](docs/TypesResourceRecordSetRegion.md)
+ - [V1AccountAccountidDnsrecordGet200Response](docs/V1AccountAccountidDnsrecordGet200Response.md)
 
 
 ## Documentation For Authorization
 
 
-## BearerAuth
+## bearerauth
 
 
 - **Type**: API key
